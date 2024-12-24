@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agostino Fabbian - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .fade.visible {
+            opacity: 1;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mask {
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center;
+        }
+
+        .mask-squircle {
+            mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAwJyBoZWlnaHQ9JzIwMCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBkPSdNMTAwIDBDMjAgMCAwIDIwIDAgMTAwczIwIDEwMCAxMDAgMTAwIDEwMC0yMCAxMDAtMTAwUzE4MCAwIDEwMCAwWicvPjwvc3ZnPg==);
+        }
+
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = [...document.querySelectorAll(".fade"), ...document.querySelectorAll(".fade-in")];
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    } else {
+                        entry.target.classList.remove("visible");
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach((el) => observer.observe(el));
+        });
+    </script>
+
+    <!-- Sezione Intestazione -->
+    <header class="bg-blue-600 text-white pt-16 pb-24">
+        <div class="max-w-5xl mx-auto text-center px-8">
+            <img src="imgs/profile.png" alt="Foto profilo di Agostino Fabbian" class="fade rounded-[60px] w-44 h-44 squircle mx-auto mb-6 border-white border-4">
+            <div class="fade-in">
+                <h1 class="text-4xl font-bold">Agostino Fabbian</h1>
+                <p class="text-lg">Professionista indipendente nel settore IT e dei servizi</p>
+                <a href="https://www.linkedin.com/in/agostino-f-778bb014" target="_blank" class="text-white underline mt-6 block">Profilo LinkedIn</a>
+                <a href="mailto:agostino.fabbian@hotmail.it" class="text-white underline mt-2 block">agostino.fabbian@hotmail.it</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sezione Chi Sono -->
+    <section class="pt-20 pb-32">
+        <div class="max-w-5xl mx-auto px-8 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-8">Chi Sono</h2>
+            <p class="text-center max-w-3xl mx-auto">
+                Project Manager IT esperto con una comprovata esperienza nel settore dell'informatica e dei servizi. Competenze in SQL, Gestione di progetti software, Microsoft Office, Integrazione e Gestione IT.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sezione Esperienza -->
+    <section class="bg-gray-200 pt-20 pb-32">
+        <div class="max-w-5xl mx-auto px-8 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-10">Esperienza</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-white p-10 shadow rounded-lg">
+                    <img src="imgs/partita-iva.jpg" alt="Lavoratore autonomo" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold">Lavoratore autonomo</h3>
+                    <p class="italic">Project Manager IT (Novembre 2018 - Presente)</p>
+                    <p>Treviso, Veneto, Italia</p>
+                </div>
+                <div class="bg-white p-10 shadow rounded-lg">
+                    <img src="imgs/aziende-varie.webp" alt="Aziende varie" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold">Aziende varie</h3>
+                    <p class="italic">Consulente IT (Gennaio 2006 - Gennaio 2013)</p>
+                </div>
+                <div class="bg-white p-10 shadow rounded-lg">
+                    <img src="imgs/benetton.jpg" alt="Benetton Group" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold">Benetton Group</h3>
+                    <p class="italic">Dirigente aziendale (1998 - 2002)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Formazione -->
+    <section class="pt-20 pb-32">
+        <div class="max-w-5xl mx-auto px-8 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-10">Formazione</h2>
+            <ul class="space-y-10">
+                <li>
+                    <h3 class="text-xl font-semibold">Università degli Studi di Padova</h3>
+                    <p class="italic">Ingegneria, Elettronica (1971 - 1976)</p>
+                </li>
+                <li>
+                    <h3 class="text-xl font-semibold">Liceo Scientifico Da Vinci</h3>
+                    <p class="italic">(1966 - 1971)</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Sezione Competenze -->
+    <section class="bg-gray-200 pt-20 pb-32">
+        <div class="max-w-5xl mx-auto px-8 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-10">Competenze</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <span class="bg-blue-600 text-white py-4 px-6 rounded-full">Integrazione della tecnologia</span>
+                <span class="bg-blue-600 text-white py-4 px-6 rounded-full">Sistemi informativi</span>
+                <span class="bg-blue-600 text-white py-4 px-6 rounded-full">Analytics aziendale</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Footer -->
+    <footer class="bg-blue-600 text-white pt-16 pb-24">
+        <div class="max-w-5xl mx-auto text-center px-8 fade-in">
+            <p>&copy; 2024 Agostino Fabbian. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+</body>
+</html>
