@@ -36,6 +36,14 @@
             mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAwJyBoZWlnaHQ9JzIwMCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBkPSdNMTAwIDBDMjAgMCAwIDIwIDAgMTAwczIwIDEwMCAxMDAgMTAwIDEwMC0yMCAxMDAtMTAwUzE4MCAwIDEwMCAwWicvPjwvc3ZnPg==);
         }
 
+        .bg-decor {
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.05) 25%, transparent 25%, transparent 50%, rgba(96, 165, 250, 0.05) 50%, rgba(96, 165, 250, 0.05) 75%, transparent 75%, transparent);
+            background-size: 40px 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -50,14 +58,14 @@
                         entry.target.classList.remove("visible");
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { threshold: 0 });
 
             elements.forEach((el) => observer.observe(el));
         });
     </script>
 
     <!-- Sezione Intestazione -->
-    <header class="bg-blue-600 text-white pt-16 pb-24">
+    <header class="bg-blue-600 text-white pt-16 pb-24 bg-decor">
         <div class="max-w-5xl mx-auto text-center px-8">
             <img src="imgs/profile.png" alt="Foto profilo di Agostino Fabbian" class="fade rounded-[60px] w-44 h-44 squircle mx-auto mb-6 border-white border-4">
             <div class="fade-in">
@@ -80,7 +88,7 @@
     </section>
 
     <!-- Sezione Esperienza -->
-    <section class="bg-gray-200 pt-20 pb-32">
+    <section class="bg-gray-200 pt-20 pb-16">
         <div class="max-w-5xl mx-auto px-8 fade-in">
             <h2 class="text-3xl font-bold text-center mb-10">Esperienza</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -101,12 +109,13 @@
                     <p class="italic">Dirigente aziendale (1998 - 2002)</p>
                 </div>
             </div>
+            <div class="pb-16"></div>
         </div>
     </section>
 
     <!-- Sezione Formazione -->
-    <section class="pt-20 pb-32">
-        <div class="max-w-5xl mx-auto px-8 fade-in">
+    <section class="pt-20">
+        <div class="max-w-5xl mx-auto px-8 fade-in pb-32">
             <h2 class="text-3xl font-bold text-center mb-10">Formazione</h2>
             <ul class="space-y-10">
                 <li>
@@ -134,9 +143,10 @@
     </section>
 
     <!-- Sezione Footer -->
-    <footer class="bg-blue-600 text-white pt-16 pb-24">
+    <footer class="bg-blue-600 text-white pt-16 pb-24 bg-decor">
         <div class="max-w-5xl mx-auto text-center px-8 fade-in">
             <p>&copy; 2024 Agostino Fabbian. Tutti i diritti riservati.</p>
+            <p class="mt-2"><a class="underline" href="mailto:agostino.fabbian@hotmail.it">agostino.fabbian@hotmail.it</a></p>
         </div>
     </footer>
 </body>
